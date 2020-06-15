@@ -1,0 +1,13 @@
+/*********************************************
+  Mixins
+*********************************************/
+
+/* --------------- Typography --------------- */
+
+@mixin font-style($size: null, $weight: null, $color: null, $line-height: null, $mb: null) {
+  margin-bottom: $mb;
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}

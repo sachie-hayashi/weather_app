@@ -1,0 +1,38 @@
+/*********************************************
+  Variables
+*********************************************/
+
+/* --------------- Colors --------------- */
+
+$gray: #909090;
+$light-gray: #C0C0C0;
+$white: white;
+$orange: #F59E5E;
+$yellow: #F4E87C;
+$blue: #4D6BD0;
+$light-blue: #A5E7F3;
+$steel: #86AEC7;
+$light-steel: #CCE4EA;
+$bluegreen: #5397A7;
+$light-bluegreen: #B6EDEF;
+
+$gradient-orange: linear-gradient($orange, $yellow);
+$gradient-blue: linear-gradient($blue, $light-blue);
+$gradient-steel: linear-gradient($steel, $light-steel);
+$gradient-bluegreen: linear-gradient($bluegreen, $light-bluegreen);
+
+$filter-gray: invert(48%) sepia(70%) saturate(2%) hue-rotate(52deg) brightness(103%) contrast(92%);
+
+/* --------------- Typography --------------- */
+
+$font-family-base: 'Open Sans', sans-serif;
+$body-color-base: $gray;
+
+$loc-size-base: 1.5rem;
+$time-size-base: 1.25rem;
+$temp-size-base: 4rem;
+$desc-size-base: 2rem;
+$list-size-base: 1.125rem;
+
+$font-weight-semibold: 600;
+

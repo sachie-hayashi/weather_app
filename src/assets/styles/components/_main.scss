@@ -1,0 +1,48 @@
+.main {
+  padding-top: 5rem;
+  background-image: $gradient-orange;
+  color: $white;
+  text-align: center;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  @include font-style($loc-size-base, $font-weight-semibold);
+}
+
+.time {
+  @include font-style($time-size-base);
+}
+
+.main-content {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: center;
+  column-gap: 1.5rem;
+  margin: 3rem auto;
+}
+
+.weather-icon {
+  width: 6.25rem;
+}
+
+.info {
+  display: grid;
+  text-align: left;
+}
+
+.temp {
+  @include font-style($temp-size-base, $line-height: 1.2);
+}
+
+.description {
+  @include font-style($desc-size-base, $font-weight-semibold);
+}
+
+.wavy-bg {
+  padding-top: (88 / 375) * 100%;
+  background-image: url('../../img/wavy_background-sm.svg');
+  background-size: cover;
+}
