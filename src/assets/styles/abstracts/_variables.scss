@@ -36,3 +36,16 @@ $list-size-base: 1.125rem;
 
 $font-weight-semibold: 600;
 
+/* --------------- Grid containers --------------- */
+
+$container-primary-max-widths: (
+  xs: 400px,
+  sm: 520px,
+  md: 620px,
+  lg: 960px,
+  xl: 1140px
+);
+
+$container-primary-padding-x: 32px;
+
+

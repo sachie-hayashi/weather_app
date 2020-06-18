@@ -2,3 +2,36 @@ body {
   font-family: $font-family-base;
   color: $body-color-base;
 }
+
+.layout {
+  @include media-breakpoint-up(lg) {
+    display: grid;
+    // grid-template-rows: repeat(2, auto);
+    grid-template-rows: 3fr 1fr;
+    grid-template-columns: minmax(23rem, 1fr) 2fr;
+    grid-template-areas: 
+      "list main"
+      "list list-horizontal";
+    min-height: 100vh;
+  }
+}
+
+.container-primary {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 $container-primary-padding-x;
+
+  @include media-breakpoint-up(lg) {
+    display: contents;
+  }
+
+  @each $breakpoint, $max-width in $container-primary-max-widths {
+    @if $breakpoint == xs {
+      max-width: $max-width;
+    } @else {
+      @include media-breakpoint-up($breakpoint) {
+        max-width: $max-width;
+      }
+    }
+  }
+}

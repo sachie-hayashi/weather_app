@@ -1,13 +1,25 @@
 .list {
+  grid-area: list;
   display: grid;
   grid-template-columns: repeat(3, auto);
+  align-content: space-evenly;
   align-items: center;
-  justify-items: center;
+  justify-content: space-between;
+  row-gap: 2.25rem;
+  margin-bottom: 0;
+  padding: 1.5rem 0;
   @extend .list-unstyled;
+
+  @include media-breakpoint-up(lg) {
+    justify-content: space-evenly;
+    padding: 1rem 0;
+  }
 }
 
 .list-item {
   display: contents;
+  position: relative;
+  cursor: pointer;
   @include font-style($list-size-base, $font-weight-semibold);
 }
 
