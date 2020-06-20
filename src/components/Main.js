@@ -1,7 +1,6 @@
 import React from 'react';
-import locationIcon from '../assets/img/location.svg';
-import weatherIcon from '../assets/img/sun.svg';
-import ListHorizontal from './ListHorizontal';
+import Icon from './Icon';
+// import ListHorizontal from './ListHorizontal';
 
 const Main = () => {
   return(
@@ -9,14 +8,14 @@ const Main = () => {
       <div className="container-primary">
         {/* Location */}
         <h1 className="location">
-          <img src={locationIcon} alt="location icon"/>
+          <Icon name="location" />
           <span className="ml-2">Vancouver, Canada</span>
         </h1>
         {/* Date & time */}
         <p className="time">Wednesday | May 29 | 4:30pm</p>
         <div className="main-content">
           {/* Weather icon */}
-          <img src={weatherIcon} alt="weather icon" className="weather-icon" />
+          <Icon name="sun" className="weather-icon" />
           {/* Temperature */}
           <span className="temp">23°C</span>
           {/* Description */}

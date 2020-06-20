@@ -1,5 +1,4 @@
 .list {
-  grid-area: list;
   display: grid;
   grid-template-columns: repeat(3, auto);
   align-content: space-evenly;
@@ -9,8 +8,9 @@
   margin-bottom: 0;
   padding: 1.5rem 0;
   @extend .list-unstyled;
-
+  
   @include media-breakpoint-up(lg) {
+    grid-area: list;
     justify-content: space-evenly;
     padding: 1rem 0;
   }
@@ -33,6 +33,6 @@
 
 .list-item-img {
   width: 2.5rem;
-  filter: $filter-gray;
+  height: 2.5rem;
 }
 

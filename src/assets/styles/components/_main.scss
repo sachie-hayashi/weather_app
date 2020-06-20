@@ -14,6 +14,7 @@
 
 .location {
   display: flex;
+  align-items: center;
   justify-content: center;
   @include font-style($loc-size-base, $font-weight-semibold);
 }
@@ -37,6 +38,7 @@
 .weather-icon {
   grid-row: 1 / 3;
   width: 6.25rem;
+  height: 6.25rem;
 }
 
 .temp {

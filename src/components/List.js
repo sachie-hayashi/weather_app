@@ -1,5 +1,5 @@
 import React from 'react';
-import weatherIcon from '../assets/img/sun.svg';
+import Icon from './Icon';
 
 const List = () => {
   const listItems = (
@@ -12,7 +12,7 @@ const List = () => {
       <span>23°C | </span>
       <span className="text-light-gray">13°C</span>
     </div>
-    <img src={weatherIcon} alt="weather icon" className="list-item-img"/>
+    <Icon name="sun" className="list-item-img" />
   </li>    
   );
 

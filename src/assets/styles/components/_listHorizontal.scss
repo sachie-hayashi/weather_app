@@ -1,5 +1,4 @@
 .list-horizontal {
-  grid-area: list-horizontal;
   align-self: center;
   justify-self: center;
   display: grid;
@@ -13,6 +12,7 @@
   @extend .list-unstyled;
 
   @include media-breakpoint-up(lg) {
+    grid-area: list-horizontal;
     column-gap: 4.5rem;
     max-width: 80%;
     margin-bottom: 1.5rem;
@@ -24,11 +24,8 @@
   justify-items: center;
   row-gap: .5rem;
 
-  img {
+  svg {
     width: 2.125rem;
-
-    @include media-breakpoint-up(lg) {
-      filter: $filter-gray;
-    }
+    height: 2.125rem;
   }
 }

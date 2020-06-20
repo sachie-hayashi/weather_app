@@ -1,11 +1,11 @@
 import React from 'react';
-import weatherIcon from '../assets/img/sun.svg';
+import Icon from './Icon';
 
 const ListHorizontal = () => {
   const listItems = (
     <li className="list-horizontal-item">
       <span>Now</span>
-      <img src={weatherIcon} alt="weather icon"/>
+      <Icon name="sun" />
       <span>23°C</span>
     </li>
   );
