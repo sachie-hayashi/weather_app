@@ -7,7 +7,7 @@ const App = () => {
   return(
     <div className="layout">
       <Main />
-      <ListHorizontal />
+      {/* <ListHorizontal /> */}
       <List />
     </div>    
   );

@@ -4,34 +4,29 @@ body {
 }
 
 .layout {
+  display: grid;
+  min-height: 100vh;
+
   @include media-breakpoint-up(lg) {
-    display: grid;
-    // grid-template-rows: repeat(2, auto);
     grid-template-rows: 3fr 1fr;
     grid-template-columns: minmax(23rem, 1fr) 2fr;
     grid-template-areas: 
       "list main"
       "list list-horizontal";
-    min-height: 100vh;
   }
 }
 
-.container-primary {
+.base-container {
   width: 100%;
-  margin: 0 auto;
-  padding: 0 $container-primary-padding-x;
+
+  @each $breakpoint, $base-container-padding-x in $base-container-padding-xes {
+    @include media-breakpoint-up($breakpoint) {
+      padding-left: $base-container-padding-x;
+      padding-right: $base-container-padding-x;
+    }
+  }
 
   @include media-breakpoint-up(lg) {
     display: contents;
-  }
-
-  @each $breakpoint, $max-width in $container-primary-max-widths {
-    @if $breakpoint == xs {
-      max-width: $max-width;
-    } @else {
-      @include media-breakpoint-up($breakpoint) {
-        max-width: $max-width;
-      }
-    }
   }
 }

@@ -11,3 +11,13 @@
   font-weight: $weight;
   line-height: $line-height;
 }
+
+/* --------------- Position --------------- */
+
+@mixin position($position, $top: null, $left: null, $right: null, $buttom: null) {
+  position: $position;
+  top: $top;
+  left: $left;
+  right: $right;
+  bottom: $buttom;
+}

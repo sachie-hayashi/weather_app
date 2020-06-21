@@ -1,13 +1,14 @@
 .main {
-  grid-area: main;
   display: grid;
-  align-items: center;
+  align-items: end;
   padding-top: 5rem;
   background-image: $gradient-orange;
   color: $white;
   text-align: center;
   
   @include media-breakpoint-up(lg) {
+    grid-area: main;
+    align-items: center;
     border-top-left-radius: 5rem;
   }
 }
@@ -51,6 +52,7 @@
 
 .wavy-bg {
   align-self: end;
+  position: relative;
   height: 88px;
   background-image: url('../../img/wavy_background.png');
   background-size: cover;  

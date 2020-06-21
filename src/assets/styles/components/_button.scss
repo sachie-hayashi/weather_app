@@ -1,0 +1,31 @@
+.btn-toggle {
+  @include position(absolute, $top: 4px, $right: 20%,);
+  @extend .btn;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $btn-toggle-size;
+  height: $btn-toggle-size;
+  padding: 0;
+  color: $btn-toggle-color;
+  border-radius: 50%;
+  background-color: $white;
+  box-shadow: $btn-toggle-shadow;
+  transition: $btn-toggle-transition;
+
+  &:hover {
+    color: $btn-toggle-color-hover;
+    box-shadow: $btn-toggle-shadow-hover;
+    transform: translateY($btn-toggle-transform-hover);
+  }
+
+  &:active {
+    color: $btn-toggle-color-active;
+    // box-shadow: $btn-toggle-shadow;
+    // transform: none;
+  }
+
+  &:focus {
+    box-shadow: $btn-toggle-shadow;
+  }
+}

@@ -7,6 +7,7 @@
 $gray: #909090;
 $light-gray: #C0C0C0;
 $white: white;
+$black: black;
 $orange: #F59E5E;
 $yellow: #F4E87C;
 $blue: #4D6BD0;
@@ -20,6 +21,12 @@ $gradient-orange: linear-gradient($orange, $yellow);
 $gradient-blue: linear-gradient($blue, $light-blue);
 $gradient-steel: linear-gradient($steel, $light-steel);
 $gradient-bluegreen: linear-gradient($bluegreen, $light-bluegreen);
+
+/* --------------- Box shadow --------------- */
+
+$shadow: rgba($black, .14);
+$shadow-dark: rgba($black, .17);
+$box-shadow-base: .25rem .5rem 1.25rem .5rem $shadow;
 
 /* --------------- Typography --------------- */
 
@@ -36,14 +43,21 @@ $font-weight-semibold: 600;
 
 /* --------------- Grid containers --------------- */
 
-$container-primary-max-widths: (
-  xs: 400px,
-  sm: 520px,
-  md: 620px,
-  lg: 960px,
-  xl: 1140px
+$base-container-padding-xes: (
+  xs: 9%,
+  sm: 14%,
+  md: 16%
 );
+  
+/* --------------- Buttons --------------- */
 
-$container-primary-padding-x: 32px;
+$btn-toggle-size: 3.75rem;
+$btn-toggle-color: $gray;
+$btn-toggle-color-hover: darken($btn-toggle-color, 20%);
+$btn-toggle-color-active: darken($btn-toggle-color, 30%);
+$btn-toggle-shadow: $box-shadow-base;
+$btn-toggle-shadow-hover: .375rem .75rem 1.25rem .5rem $shadow;
+$btn-toggle-transform-hover: -.125rem;  // translateY
+$btn-toggle-transition: .35s;
 
-
+  

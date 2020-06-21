@@ -17,7 +17,7 @@ const List = () => {
   );
 
   return(
-    <div className="container-primary">
+    <div className="base-container">
       <ul className="list">
         {listItems}
         {listItems}
