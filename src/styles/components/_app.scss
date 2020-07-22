@@ -12,17 +12,18 @@ body {
     grid-template-columns: minmax(23rem, 1fr) 2fr;
     grid-template-areas: 
       "list main"
-      "list list-horizontal";
+      "list hourly-list";
   }
 }
 
-.base-container {
+.container-base {
   width: 100%;
+  overflow-x: auto;
 
-  @each $breakpoint, $base-container-padding-x in $base-container-padding-xes {
+  @each $breakpoint, $container-base-padding-x in $container-base-padding-xes {
     @include media-breakpoint-up($breakpoint) {
-      padding-left: $base-container-padding-x;
-      padding-right: $base-container-padding-x;
+      padding-left: $container-base-padding-x;
+      padding-right: $container-base-padding-x;
     }
   }
 

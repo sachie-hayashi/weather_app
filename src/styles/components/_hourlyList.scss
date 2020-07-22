@@ -1,4 +1,4 @@
-.list-horizontal {
+.hourly-list {
   align-self: center;
   justify-self: center;
   display: grid;
@@ -12,14 +12,14 @@
   @extend .list-unstyled;
 
   @include media-breakpoint-up(lg) {
-    grid-area: list-horizontal;
+    grid-area: hourly-list;
     column-gap: 4.5rem;
     max-width: 80%;
     margin-bottom: 1.5rem;
   }
 }
 
-.list-horizontal-item {
+.hourly-item {
   display: grid;
   justify-items: center;
   row-gap: .5rem;

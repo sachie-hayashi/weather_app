@@ -1,7 +1,7 @@
 import React from 'react';
 import Icon from './Icon';
 
-const List = () => {
+const DailyList = () => {
   const listItems = (
     <li className="list-item">
     <div className="list-item-title">
@@ -17,7 +17,7 @@ const List = () => {
   );
 
   return(
-    <div className="base-container">
+    <div className="container-base">
       <ul className="list">
         {listItems}
         {listItems}
@@ -29,4 +29,4 @@ const List = () => {
   );
 }
 
-export default List;
+export default DailyList;

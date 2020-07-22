@@ -1,12 +1,19 @@
 import React from 'react';
 import Icon from './Icon';
 import Button from './Button';
-// import ListHorizontal from './ListHorizontal';
+import HourlyList from './HourlyList';
+import { useSelector } from 'react-redux';
+import { useState } from 'react';
 
 const Main = () => {
-  return(
+  const [isOpen, setIsOpen] = useState(false);
+  const { isDesktop } = useSelector(state => state);
+
+  const handleClick = () => setIsOpen(prevState => !prevState);
+
+  return (
     <div className="main">
-      <div className="base-container">
+      <div className="container-base">
         <div className="main-title">
           {/* Location */}
           <h1 className="location">
@@ -24,13 +31,13 @@ const Main = () => {
           {/* Description */}
           <span className="description">Sunny</span>
         </div>
-        {/* <ListHorizontal /> */}
+        {isOpen && !isDesktop && <HourlyList />}
       </div>
       <div className="wavy-bg">
-        <Button />
+        {!isDesktop && <Button onClick={handleClick} />}
       </div>
-    </div>  
+    </div>
   );
-}
+};
 
 export default Main;

@@ -1,16 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Main from './Main';
-import List from './List';
-import ListHorizontal from './ListHorizontal';
+import DailyList from './DailyList';
+import { useDispatch, useSelector } from 'react-redux';
+import { getViewport, fetchOnecall, fetch3hour } from '../actions';
+import HourlyList from './HourlyList';
+import Loader from './Loader';
 
 const App = () => {
-  return(
+  const { isDesktop, loadings } = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  const isLoading = Object.values(loadings).some(item => item);
+  // const matches = /(.*)_(REQUEST|SUCCESS|FAILURE)/.exec(
+  //   'FETCH_ONECALL_SUCCESS'
+  // );
+  // console.log(matches);
+
+  useEffect(() => {
+    dispatch(getViewport()); // Execute on load
+    window.addEventListener('resize', () => dispatch(getViewport())); // Bind event listener
+
+    dispatch(fetchOnecall());
+    dispatch(fetch3hour());
+  }, [dispatch]);
+
+  return (
     <div className="layout">
       <Main />
-      {/* <ListHorizontal /> */}
-      <List />
-    </div>    
+      {isDesktop && <HourlyList />}
+      <DailyList />
+      {isLoading && <Loader />}
+    </div>
   );
-}
+};
 
 export default App;

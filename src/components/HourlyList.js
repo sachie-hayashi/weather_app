@@ -1,9 +1,9 @@
 import React from 'react';
 import Icon from './Icon';
 
-const ListHorizontal = () => {
+const HourlyList = () => {
   const listItems = (
-    <li className="list-horizontal-item">
+    <li className="hourly-item">
       <span>Now</span>
       <Icon name="sun" />
       <span>23°C</span>
@@ -11,7 +11,7 @@ const ListHorizontal = () => {
   );
 
   return(
-    <ul className="list-horizontal">
+    <ul className="hourly-list">
       {listItems}
       {listItems}
       {listItems}
@@ -28,4 +28,4 @@ const ListHorizontal = () => {
   );
 }
 
-export default ListHorizontal;
+export default HourlyList;
