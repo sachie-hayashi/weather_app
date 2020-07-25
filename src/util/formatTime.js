@@ -1,3 +1,5 @@
+import getDateTime from './getDateTime';
+
 /**
  * Format time data from a unix timestamp
  * @param {number} unixTimestamp The number of seconds since midnight on January 1, 1970, UTC.
@@ -7,8 +9,6 @@
  *  formatTime(1595372775); // -> 4:06pm
  *  formatTime(1595372775, true); // -> 4pm *
  */
-
-import getDateTime from './getDateTime';
 
 const formatTime = (unixTimestamp, hourOnly = false) => {
   const { hour, minute, dayPeriod } = getDateTime(unixTimestamp);

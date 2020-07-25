@@ -4,33 +4,23 @@ import Button from './Button';
 import HourlyList from './HourlyList';
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
-import formatDate from '../util/formatDate';
-import formatTime from '../util/formatTime';
-import getDateTime from '../util/getDateTime';
 import findByDate from '../util/findByDate';
+import getData from '../util/getData';
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isDesktop, selectedDate, weather: data } = useSelector(
-    state => state
-  );
-  const { city: location, current, daily } = data;
+  const { isDesktop, selectedDate, weather } = useSelector(state => state);
+  const { city: location, current, daily } = weather;
 
   /* Location */
   const { name: city, country } = location;
 
-  /* Weather */
+  /* Weather & Date & Time */
   // Show current weather on load
   // If date is selected, show dily forecast for the selected date
   const selectedForecast = findByDate(daily, selectedDate); // Daily forecast for the selected date
-  let { dt, temp, weather } = selectedDate ? selectedForecast : current;
-  if (typeof temp === 'object') temp = temp.day;
-  const { main } = weather ? weather[0] : [];
-
-  /* Date & time */
-  const date = dt && formatDate(dt);
-  const time = dt && formatTime(dt);
-  const { weekday } = dt ? getDateTime(dt) : {};
+  const data = selectedDate ? selectedForecast : current;
+  const { date, time, weekday, main, temp } = getData(data);
 
   /* Handler */
   const handleClick = () => setIsOpen(prevState => !prevState);
@@ -51,7 +41,7 @@ const Main = () => {
           {/* Date & time */}
           {weekday && date && time && (
             <p className="time">
-              {weekday} | {date} | {time}
+              {weekday} | {date} | {time.main}
             </p>
           )}
         </div>

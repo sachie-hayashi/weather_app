@@ -1,20 +1,33 @@
 import formatDate from './formatDate';
 import formatTime from './formatTime';
 import getDateTime from './getDateTime';
+import isEmpty from './isEmpty';
+
+/**
+ * Get weather & time data from single data object
+ * @param {Object} obj an object in daily, every3hour or daily array or value of current
+ * @return {Object}
+ */
 
 const getData = obj => {
-  let { dt, temp, weather } = obj;
-  if (typeof temp === 'object') temp = temp.day;
-  // const { main } = weather ? weather[0] : [];
-  const { main } = weather[0];
+  if (isEmpty(obj)) return {};
 
-  // const date = dt && formatDate(dt);
-  // const time = dt && formatTime(dt);
-  // const { weekday } = dt ? getDateTime(dt) : {};
+  const { dt, weather, main: other } = obj;
+
+  let { temp } = obj; // temp for current or hourly data
+  if (typeof temp === 'object') temp = temp.day; // temp for daily data
+  if (temp === undefined) temp = other.temp; // temp for every 3 hour data
+
   const date = formatDate(dt);
-  const time = formatTime(dt);
+  const time = {
+    main: formatTime(dt),
+    hour: formatTime(dt, true),
+  };
   const { weekday } = getDateTime(dt);
-  return { date, time, weekday, temp, main };
+  const { main } = weather[0];
+  const temperature = Math.round(temp);
+
+  return { date, time, weekday, main, temp: temperature };
 };
 
 export default getData;

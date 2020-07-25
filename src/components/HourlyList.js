@@ -2,7 +2,7 @@ import React from 'react';
 import HourlyItem from './HourlyItem';
 import { useSelector } from 'react-redux';
 import groupByDate from '../util/groupByDate';
-import formatTime from '../util/formatTime';
+import getData from '../util/getData';
 
 const HourlyList = () => {
   const { selectedDate, weather } = useSelector(state => state);
@@ -19,14 +19,17 @@ const HourlyList = () => {
     data = every3hourByDate[selectedDate];
   }
 
-  const items = data.map(({ dt, main, weather }) => (
-    <HourlyItem
-      key={dt}
-      time={formatTime(dt, true)}
-      main={weather[0].main.toLowerCase()}
-      temp={Math.floor(main.temp)}
-    />
-  ));
+  const items = data.map(item => {
+    const { time, main, temp } = getData(item);
+    return (
+      <HourlyItem
+        key={item.dt}
+        time={time.hour}
+        main={main.toLowerCase()}
+        temp={temp}
+      />
+    );
+  });
 
   return <ul className="hourly-list">{items}</ul>;
 };

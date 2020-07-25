@@ -1,9 +1,8 @@
 import React, { useCallback } from 'react';
 import DailyItem from './DailyItem';
-import formatDate from '../util/formatDate';
-import getDateTime from '../util/getDateTime';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectDate } from '../actions';
+import getData from '../util/getData';
 
 const DailyList = () => {
   const { daily } = useSelector(state => state.weather);
@@ -14,18 +13,16 @@ const DailyList = () => {
     [dispatch]
   );
 
-  const items = daily.slice(0, 5).map(({ dt, weather, temp }) => {
-    const date = formatDate(dt);
-    const { weekday } = getDateTime(dt);
-    const { main } = weather[0];
+  const items = daily.slice(0, 5).map(item => {
+    const { date, weekday, main } = getData(item);
     return (
       <DailyItem
-        key={dt}
+        key={item.dt}
         date={date}
         weekday={weekday}
         main={main.toLowerCase()}
-        tempMin={Math.round(temp.min)}
-        tempMax={Math.round(temp.max)}
+        tempMin={Math.round(item.temp.min)}
+        tempMax={Math.round(item.temp.max)}
         onClick={handleClick}
       />
     );
