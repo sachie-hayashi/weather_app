@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import Main from './Main';
 import DailyList from './DailyList';
-import { useDispatch, useSelector } from 'react-redux';
-import { getViewport, fetchOnecall, fetch3hour } from '../actions';
 import HourlyList from './HourlyList';
 import Loader from './Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import { getViewport, fetchOnecall, fetch3hour } from '../actions';
 
 const App = () => {
   const { isDesktop, loadings } = useSelector(state => state);

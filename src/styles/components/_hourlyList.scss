@@ -1,7 +1,8 @@
 .hourly-list {
   align-self: center;
   justify-self: center;
-  display: grid;
+  // display: grid;
+  display: inline-grid;
   grid-auto-flow: column;
   justify-content: start;
   column-gap: 2.125rem;
@@ -16,16 +17,5 @@
     column-gap: 4.5rem;
     max-width: 80%;
     margin-bottom: 1.5rem;
-  }
-}
-
-.hourly-item {
-  display: grid;
-  justify-items: center;
-  row-gap: .5rem;
-
-  svg {
-    width: 2.125rem;
-    height: 2.125rem;
   }
 }

@@ -1,0 +1,11 @@
+
+.hourly-item {
+  display: grid;
+  justify-items: center;
+  row-gap: .5rem;
+
+  svg {
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+}

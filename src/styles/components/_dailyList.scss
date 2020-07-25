@@ -5,8 +5,9 @@
   align-items: center;
   justify-content: space-between;
   row-gap: 2.25rem;
+  position: relative;
   margin-bottom: 0;
-  padding: 1.5rem 0;
+  padding: 2rem 0 5rem;
   @extend .list-unstyled;
   
   @include media-breakpoint-up(lg) {
@@ -14,25 +15,5 @@
     justify-content: space-evenly;
     padding: 1rem 0;
   }
-}
-
-.list-item {
-  display: contents;
-  position: relative;
-  cursor: pointer;
-  @include font-style($list-size-base, $font-weight-semibold);
-}
-
-.list-item-title {
-  display: grid;
-}
-
-.list-item-subtitle {
-  @include font-style(1rem, $font-weight-normal, $light-gray);
-}
-
-.list-item-img {
-  width: 2.5rem;
-  height: 2.5rem;
 }
 
