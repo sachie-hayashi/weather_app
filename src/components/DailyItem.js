@@ -5,13 +5,18 @@ import formatDate from '../util/formatDate';
 import { useSelector } from 'react-redux';
 import { Today } from '../actions';
 
-const DailyItem = ({ date, weekday, main, tempMin, tempMax, onClick }) => {
+const DailyItem = props => {
+  const { index, date, weekday, main, tempMin, tempMax, onClick } = props;
   const { selectedDate } = useSelector(state => state);
   const today = formatDate(Math.floor(Date.now() / 1000));
 
+  // Show an arrow for 1st day on load
+  // If date is selected, show an arrow for the selected date
+  const isArrow = (!selectedDate && index === 0) || selectedDate === date;
+
   return (
     <li data-date={date} onClick={onClick} className="list-item">
-      {selectedDate === date && <div className="arrow" />}
+      {isArrow && <div className="arrow" />}
       <div className="list-item-title">
         <span>{weekday}</span>
         <span className="list-item-subtitle">
@@ -28,6 +33,7 @@ const DailyItem = ({ date, weekday, main, tempMin, tempMax, onClick }) => {
 };
 
 DailyItem.propTypes = {
+  index: PropTypes.number,
   date: PropTypes.string,
   weekday: PropTypes.string,
   main: PropTypes.string,

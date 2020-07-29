@@ -1,4 +1,4 @@
-import { SELECT_DATE, Today } from '../actions';
+import { SELECT_DATE } from '../actions';
 
 const selectedDateReducer = (state = '', action) => {
   switch (action.type) {

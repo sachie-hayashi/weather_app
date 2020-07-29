@@ -21,3 +21,9 @@
   right: $right;
   bottom: $buttom;
 }
+
+/* --------------- Colors --------------- */
+
+@mixin bg-color($color: white, $property: background-color) {
+  #{$property}: $color;
+}

@@ -1,0 +1,28 @@
+.err-content {
+  align-self: end;
+
+  > * {
+    &:not(:last-child) {
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+.err-title {
+  @extend .location;
+}
+
+.help-text {
+  @extend .time;
+}
+
+.btn-retry {
+  color: $steel;
+
+  &:hover,
+  &.btn-white:not(:disabled):not(.disabled):active,
+  &:focus,
+  &:disabled {
+    color: $steel;
+  }
+}

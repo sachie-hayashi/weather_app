@@ -1,5 +1,6 @@
 import React from 'react';
-import Icon from './Icon';
+import MainContent from './MainContent';
+import ErrContent from './ErrContent';
 import Button from './Button';
 import HourlyList from './HourlyList';
 import { useSelector } from 'react-redux';
@@ -9,8 +10,12 @@ import getData from '../util/getData';
 
 const Main = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { isDesktop, selectedDate, weather } = useSelector(state => state);
+  const { isDesktop, selectedDate, weather, errors } = useSelector(
+    state => state
+  );
   const { city: location, current, daily } = weather;
+
+  const isError = Object.values(errors).some(item => item);
 
   /* Location */
   const { name: city, country } = location;
@@ -25,38 +30,29 @@ const Main = () => {
   /* Handler */
   const handleClick = () => setIsOpen(prevState => !prevState);
 
+  /* Styling */
+  const background = main ? `bg-${main.toLowerCase()}` : '';
+
   return (
-    <div className="main">
+    <div className={`main ${background}`}>
       <div className="container-base">
-        <div className="main-title">
-          {/* Location */}
-          {city && country && (
-            <h1 className="location">
-              <Icon name="location" />
-              <span className="ml-2">
-                {city}, {country === 'CA' ? 'Canada' : country}
-              </span>
-            </h1>
-          )}
-          {/* Date & time */}
-          {weekday && date && time && (
-            <p className="time">
-              {weekday} | {date} | {time.main}
-            </p>
-          )}
-        </div>
-        <div className="main-content">
-          {/* Weather icon */}
-          <Icon name={main && main.toLowerCase()} className="weather-icon" />
-          {/* Temperature */}
-          <span className="temp">{temp && `${Math.round(temp)}°C`}</span>
-          {/* Description */}
-          <span className="description">{main}</span>
-        </div>
+        {isError ? (
+          <ErrContent />
+        ) : (
+          <MainContent
+            city={city}
+            country={country}
+            date={date}
+            time={time}
+            weekday={weekday}
+            main={main}
+            temp={temp}
+          />
+        )}
         {isOpen && !isDesktop && <HourlyList />}
       </div>
       <div className="wavy-bg">
-        {!isDesktop && <Button onClick={handleClick} />}
+        {!isDesktop && !isError && <Button onClick={handleClick} />}
       </div>
     </div>
   );

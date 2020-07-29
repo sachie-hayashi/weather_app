@@ -13,11 +13,12 @@ const DailyList = () => {
     [dispatch]
   );
 
-  const items = daily.slice(0, 5).map(item => {
+  const items = daily.slice(0, 5).map((item, i) => {
     const { date, weekday, main } = getData(item);
     return (
       <DailyItem
         key={item.dt}
+        index={i}
         date={date}
         weekday={weekday}
         main={main.toLowerCase()}

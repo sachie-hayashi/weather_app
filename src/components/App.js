@@ -11,10 +11,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   const isLoading = Object.values(loadings).some(item => item);
-  // const matches = /(.*)_(REQUEST|SUCCESS|FAILURE)/.exec(
-  //   'FETCH_ONECALL_SUCCESS'
-  // );
-  // console.log(matches);
 
   useEffect(() => {
     dispatch(getViewport()); // Execute on load
