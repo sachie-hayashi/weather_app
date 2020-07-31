@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import MainContent from './MainContent';
 import ErrContent from './ErrContent';
 import Button from './Button';
 import HourlyList from './HourlyList';
 import { useSelector } from 'react-redux';
-import { useState } from 'react';
 import findByDate from '../util/findByDate';
 import getData from '../util/getData';
 

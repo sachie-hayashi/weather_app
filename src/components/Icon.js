@@ -4,6 +4,11 @@ import { ReactComponent as Sun } from '../assets/icons/sun.svg';
 import { ReactComponent as Cloud } from '../assets/icons/cloud.svg';
 import { ReactComponent as Shower } from '../assets/icons/shower.svg';
 import { ReactComponent as Snow } from '../assets/icons/snow.svg';
+import { ReactComponent as Thunderstorm } from '../assets/icons/thunderstorm.svg';
+import { ReactComponent as Drizzle } from '../assets/icons/drizzle.svg';
+import { ReactComponent as Mist } from '../assets/icons/mist.svg';
+import { ReactComponent as Tornado } from '../assets/icons/tornado.svg';
+import { ReactComponent as Squall } from '../assets/icons/squall.svg';
 import { ReactComponent as Plus } from '../assets/icons/plus.svg';
 import { ReactComponent as Minus } from '../assets/icons/minus.svg';
 
@@ -27,12 +32,28 @@ const Icon = ({ name, ...attr }) => {
       return <Shower {...attr} />;
     case 'snow':
       return <Snow {...attr} />;
+    case 'thunderstorm':
+      return <Thunderstorm {...attr} />;
+    case 'drizzle':
+      return <Drizzle {...attr} />;
+    case 'mist':
+      return <Mist {...attr} />;
+    case 'smoke':
+    case 'haze':
+    case 'dust':
+    case 'fog':
+    case 'sand':
+    case 'ash':
+    case 'tornado':
+      return <Tornado {...attr} />;
+    case 'squall':
+      return <Squall {...attr} />;
     case 'plus':
       return <Plus {...attr} />;
     case 'minus':
       return <Minus {...attr} />;
     default:
-      return null;
+      return <span {...attr} />;
   }
 };
 

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="45" viewBox="0 0 52 45">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: currentColor;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="hail" class="cls-1" d="M166,474c-0.338,0-.67-0.023-1-0.056v-3.023A7,7,0,1,0,166,457a6.942,6.942,0,0,0-1.1.1,13.5,13.5,0,1,0-26.9-1.6c0,0.03,0,.059,0,0.089A8,8,0,1,0,135,471h1v3h-1a11,11,0,0,1,0-22c0.127,0,.25.015,0.375,0.019a16.49,16.49,0,0,1,32.559,2.172A10,10,0,0,1,166,474Zm-25-10v10h-2V464h2Zm1,17h-4v-4h4v4Zm6-14v10h-2V467h2Zm1,17h-4v-4h4v4Zm6-20v10h-2V464h2Zm1,17h-4v-4h4v4Zm6-14v10h-2V467h2Zm1,17h-4v-4h4v4Z" transform="translate(-124 -439)"/>
+</svg>

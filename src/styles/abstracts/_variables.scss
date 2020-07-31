@@ -16,17 +16,22 @@ $steel: #86AEC7;
 $light-steel: #CCE4EA;
 $bluegreen: #5397A7;
 $light-bluegreen: #B6EDEF;
+$indigo: #4C42A3;
+$light-bluegray: #A6C5DB;
 
 $gradient-orange: linear-gradient($orange, $yellow);
 $gradient-blue: linear-gradient($blue, $light-blue);
 $gradient-steel: linear-gradient($steel, $light-steel);
 $gradient-bluegreen: linear-gradient($bluegreen, $light-bluegreen);
+$gradient-indigo: linear-gradient($indigo, $light-bluegray);
 
 $weather-colors: (
   clear: $gradient-orange,
   clouds: $gradient-steel,
   rain: $gradient-blue,
-  snow: $gradient-bluegreen
+  snow: $gradient-bluegreen,
+  thunderstorm: $gradient-indigo,
+  drizzle: $gradient-blue,
 );
 
 /* --------------- Box shadow --------------- */
@@ -71,3 +76,4 @@ $btn-toggle-transition: .35s;
 
 $arrow-width: .625rem;
 $arrow-height: 1rem;
+$arrow-gap: .5rem;

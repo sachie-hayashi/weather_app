@@ -17,6 +17,11 @@ const DailyItem = props => {
   return (
     <li data-date={date} onClick={onClick} className="list-item">
       {isArrow && <div className="arrow" />}
+      <span
+        data-date={date}
+        className="list-item-clickable"
+        onClick={onClick}
+      />
       <div className="list-item-title">
         <span>{weekday}</span>
         <span className="list-item-subtitle">

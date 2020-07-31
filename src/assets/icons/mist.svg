@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="35" height="45" viewBox="0 0 35 45">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: currentColor;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="small_mist" data-name="small mist" class="cls-1" d="M790,303a8,8,0,0,1-8-8c0-7,8-14,8-14s8,7,8,14A8,8,0,0,1,790,303Zm0-18s-5,5-5,10a5,5,0,0,0,10,0C795,290,790,285,790,285Zm-6-5a8,8,0,0,1-8-8c0-7,8-14,8-14s8,7,8,14A8,8,0,0,1,784,280Zm0-18s-5,5-5,10a5,5,0,0,0,10,0C789,267,784,262,784,262Zm-13,35a8,8,0,0,1-8-8c0-7,8-14,8-14s8,7,8,14A8,8,0,0,1,771,297Zm0-18s-5,5-5,10a5,5,0,0,0,10,0C776,284,771,279,771,279Z" transform="translate(-763 -258)"/>
+</svg>

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Icon from './Icon';
 
 const MainContent = ({ city, country, date, time, weekday, main, temp }) => {
@@ -31,6 +32,16 @@ const MainContent = ({ city, country, date, time, weekday, main, temp }) => {
       </div>
     </>
   );
+};
+
+MainContent.propTypes = {
+  city: PropTypes.string,
+  country: PropTypes.string,
+  date: PropTypes.string,
+  time: PropTypes.object,
+  weekday: PropTypes.string,
+  main: PropTypes.string,
+  temp: PropTypes.number,
 };
 
 export default MainContent;
