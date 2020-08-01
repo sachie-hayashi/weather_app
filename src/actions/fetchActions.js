@@ -1,7 +1,7 @@
-// import onecallData from '../dummyData/onecall';
-// import every3hourData from '../dummyData/every3hour';
-import onecallData from '../dummyData/onecall_thunderstorm';
-import every3hourData from '../dummyData/every3hour_thunderstorm';
+// import onecallData from '../misc/dummyData/onecall';
+// import every3hourData from '../misc/dummyData/every3hour';
+// import onecallData from '../misc/dummyData/onecall_thunderstorm';
+// import every3hourData from '../misc/dummyData/every3hour_thunderstorm';
 
 /* --------------- Action types --------------- */
 
@@ -31,20 +31,20 @@ const fetchOnecallFailure = error => ({
 export const fetchOnecall = () => dispatch => {
   dispatch(fetchOnecallRequest());
 
-  // fetch(
-  //   'https://api.openweathermap.org/data/2.5/onecall?lat=49.2497&lon=-123.1193&units=metric&appid=1da740daf0be5c49111d044e808821c3'
-  // )
-  //   .then(response => {
-  //     if (!response.ok) throw Error(response.statusText);
-  //     return response.json();
-  //   })
-  //   .then(data => dispatch(fetchOnecallSuccess(data)))
-  //   .catch(error => dispatch(fetchOnecallFailure(error.message)));
+  fetch(
+    'https://api.openweathermap.org/data/2.5/onecall?lat=49.2497&lon=-123.1193&units=metric&appid=1da740daf0be5c49111d044e808821c3'
+  )
+    .then(response => {
+      if (!response.ok) throw Error(response.statusText);
+      return response.json();
+    })
+    .then(data => dispatch(fetchOnecallSuccess(data)))
+    .catch(error => dispatch(fetchOnecallFailure(error.message)));
 
   // For dummy API call and data
-  setTimeout(() => {
-    dispatch(fetchOnecallSuccess(onecallData));
-  }, 4000);
+  // setTimeout(() => {
+  //   dispatch(fetchOnecallSuccess(onecallData));
+  // }, 4000);
 };
 
 const fetch3hourRequest = () => ({
@@ -64,18 +64,18 @@ const fetch3hourFailure = error => ({
 export const fetch3hour = () => dispatch => {
   dispatch(fetch3hourRequest());
 
-  // fetch(
-  //   'https://api.openweathermap.org/data/2.5/forecast?q=Vancouver,ca&units=metric&appid=1da740daf0be5c49111d044e808821c3'
-  // )
-  //   .then(response => {
-  //     if (!response.ok) throw Error(response.statusText);
-  //     return response.json();
-  //   })
-  //   .then(data => dispatch(fetch3hourSuccess(data)))
-  //   .catch(error => dispatch(fetch3hourFailure(error.message)));
+  fetch(
+    'https://api.openweathermap.org/data/2.5/forecast?q=Vancouver,ca&units=metric&appid=1da740daf0be5c49111d044e808821c3'
+  )
+    .then(response => {
+      if (!response.ok) throw Error(response.statusText);
+      return response.json();
+    })
+    .then(data => dispatch(fetch3hourSuccess(data)))
+    .catch(error => dispatch(fetch3hourFailure(error.message)));
 
   // For dummy API call and data
-  setTimeout(() => {
-    dispatch(fetch3hourSuccess(every3hourData));
-  }, 2000);
+  // setTimeout(() => {
+  //   dispatch(fetch3hourSuccess(every3hourData));
+  // }, 2000);
 };
