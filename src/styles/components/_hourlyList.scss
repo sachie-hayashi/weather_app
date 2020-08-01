@@ -1,15 +1,19 @@
 .hourly-list {
   align-self: center;
   justify-self: center;
-  // display: grid;
   display: inline-grid;
   grid-auto-flow: column;
   justify-content: start;
   column-gap: 2.125rem;
   max-width: 100%;
+  max-height: 0;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   overflow-x: auto;
+  opacity: 0;
+  animation: fadein $transition-duration-base linear forwards;
+  transform-origin: top;
+  will-change: max-height, opacity;
   @extend .list-unstyled;
 
   @include media-breakpoint-up(lg) {
@@ -17,5 +21,16 @@
     column-gap: 4.5rem;
     max-width: 88%;
     margin-bottom: 1.5rem;
+  }
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    max-height: 0;
+  }
+  to {
+    opacity: 1;
+    max-height: 200px;
   }
 }
