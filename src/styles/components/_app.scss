@@ -23,8 +23,8 @@ body {
 }
 
 .container-base {
-  width: 100%;
-  overflow-x: auto;
+  width: 100vw;
+  overflow-x: hidden;
 
   @each $breakpoint, $container-base-padding-x in $container-base-padding-xes {
     @include media-breakpoint-up($breakpoint) {
